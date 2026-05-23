@@ -51,6 +51,8 @@
     python3
     bun
     docker-compose
+    awscli2
+    libcoap
 
     # Networking Tools
     tcpdump
@@ -61,7 +63,9 @@
     traceroute
     sslscan
     postman
-    
+
+    # Serial Comms
+    minicom
 
   ];
 }
