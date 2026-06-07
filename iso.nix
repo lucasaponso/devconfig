@@ -1,14 +1,9 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
-  # Boot
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-  };
+  # ISO boot
+  isoImage.isoName = "lucas-nixos.iso";
+  isoImage.squashfsCompression = "zstd -Xcompression-level 6";
+  boot.loader.grub.enable = lib.mkForce false;
 
   # Network
   networking.hostName = "nixos";
@@ -25,6 +20,12 @@
     enable = true;
     desktopManager.xfce.enable = true;
     displayManager.lightdm.enable = true;
+  };
+
+  # Autologin on live ISO
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "lucas";
   };
 
   # VM guest tools
@@ -46,8 +47,6 @@
       PermitRootLogin = "no";
     };
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # User
   users.users.lucas = {
