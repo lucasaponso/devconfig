@@ -1,0 +1,33 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    git
+    vscode
+    curl
+    wget
+    neovim
+    fzf
+    ripgrep
+    htop
+    nmap
+    firefox
+    tmux
+    gcc
+    cmake
+    python3
+    nodejs
+    unzip
+    minicom
+    tcpdump
+    netcat-gnu
+    docker-compose
+    wireshark
+    postman
+    whois
+    traceroute
+    nasm
+    lld
+    remmina
+    tor-browser
+  ];
+}

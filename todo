@@ -1,0 +1,5 @@
+1. shared directory between host and target
+2. target connects to network with bridge (seperate node/ip)
+3. shared clipboard between host and targets
+4. redirect audio from vm to host sound card
+5. forward serial data from host to vm.
