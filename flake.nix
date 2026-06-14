@@ -17,6 +17,16 @@
         "${nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
         ./iso.nix
       ];
+      specialArgs = { hypervisor = "qemu"; };
+    };
+
+    nixosConfigurations.liveisoVmware = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        "${nixpkgs}/nixos/modules/installer/cd-dvd/iso-image.nix"
+        ./iso.nix
+      ];
+      specialArgs = { hypervisor = "vmware"; };
     };
   };
 }

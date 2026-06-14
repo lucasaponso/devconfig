@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  hypervisor = "qemu";
+  hypervisor = "vmware";
 in
 {
   virtualisation.vmware.guest = lib.mkIf (hypervisor == "vmware") {
