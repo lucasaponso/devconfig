@@ -2,9 +2,8 @@
 {
   services.spice-vdagentd.enable = hypervisor == "qemu";
   services.qemuGuest.enable = hypervisor == "qemu";
-  virtualisation.vmware.guest = lib.mkIf (hypervisor == "vmware") {
-    enable = true;
-    headless = false;
-  };
+
+  virtualisation.vmware.guest.enable = hypervisor == "vmware";
+
   virtualisation.docker.enable = true;
 }

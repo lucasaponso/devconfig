@@ -14,6 +14,8 @@ jobs:
         include:
           - name: qemu
             flakeAttr: nixosConfigurations.liveiso
+          - name: vmware
+            flakeAttr: nixosConfigurations.liveisoVmware
 
     steps:
       - name: Checkout repository
